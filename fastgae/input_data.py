@@ -20,6 +20,9 @@ def load_data(dataset):
          zf.ZipFile("../data/google.txt.zip").extract("google.txt", "../data/")
          adj = nx.adjacency_matrix(nx.read_edgelist("../data/google.txt"))
          features = sp.identity(adj.shape[0])
+    elif dataset == 'balsac':
+        adj = sp.load_npz('../data/adj.npz')
+        features = sp.identity(adj.shape[0])
     elif dataset in ('cora', 'citeseer', 'pubmed'):
         # Load the data: x, tx, allx, graph
         names = ['x', 'tx', 'allx', 'graph']

@@ -10,6 +10,8 @@ import scipy.sparse as sp
 import tensorflow.compat.v1 as tf
 import time
 
+import pickle as pkl
+
 tf.disable_eager_execution()
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
@@ -241,6 +243,10 @@ for i in range(FLAGS.nb_run):
 
     # Get embedding from model
     emb = sess.run(model.z_mean, feed_dict = feed_dict)
+
+    # Save embedding
+    with open('emb.pkl', 'wb') as outfile:
+        pkl.dump(emb, outfile)
 
     # Compute total running time
     mean_time.append(time.time() - t_start)
