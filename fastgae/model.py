@@ -1,4 +1,4 @@
-from fastgae.layers import *
+from layers import *
 import tensorflow.compat.v1 as tf
 
 flags = tf.app.flags

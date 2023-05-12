@@ -1,14 +1,16 @@
-from fastgae.evaluation import get_roc_score, clustering_latent_space
-from fastgae.input_data import load_data, load_label
-from fastgae.model import GCNModelAE, GCNModelVAE
-from fastgae.optimizer import OptimizerAE, OptimizerVAE
-from fastgae.preprocessing import *
-from fastgae.sampling import get_distribution, node_sampling
+from evaluation import get_roc_score, clustering_latent_space
+from input_data import load_data, load_label
+from model import GCNModelAE, GCNModelVAE
+from optimizer import OptimizerAE, OptimizerVAE
+from preprocessing import *
+from sampling import get_distribution, node_sampling
 import numpy as np
 import os
 import scipy.sparse as sp
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import time
+
+tf.disable_eager_execution()
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)

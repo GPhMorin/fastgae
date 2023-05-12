@@ -1,4 +1,4 @@
-from fastgae.initializations import weight_variable_glorot
+from initializations import weight_variable_glorot
 import tensorflow.compat.v1 as tf
 
 flags = tf.app.flags
