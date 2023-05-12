@@ -1,7 +1,7 @@
 from sklearn.cluster import KMeans
 from sklearn.metrics import average_precision_score, roc_auc_score, adjusted_mutual_info_score
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 flags = tf.app.flags
 FLAGS = flags.FLAGS

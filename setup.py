@@ -8,6 +8,6 @@ setup(name='fastgae',
                         'numpy',
                         'scikit-learn',
                         'scipy==1.*',
-                        'tensorflow==1.*'],
+                        'tensorflow==2.*'],
       package_data={'fastgae': ['README.md']},
       packages=find_packages())

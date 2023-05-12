@@ -2,7 +2,7 @@ from fastgae.preprocessing import sparse_to_tuple
 import networkx as nx
 import numpy as np
 import scipy.sparse as sp
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 import warnings as wn
 
 flags = tf.app.flags
