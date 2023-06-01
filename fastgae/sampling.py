@@ -23,7 +23,7 @@ def get_distribution(measure, alpha, adj):
         proba = np.power(np.sum(adj, axis=0),alpha).tolist()[0]
     elif measure == 'core':
         # Core-based distribution
-        G = nx.from_scipy_sparse_matrix(adj)
+        G = nx.from_scipy_sparse_array(adj)
         G.remove_edges_from(nx.selfloop_edges(G))
         proba = np.power(list(nx.core_number(G).values()), alpha)
     elif measure == 'uniform':
